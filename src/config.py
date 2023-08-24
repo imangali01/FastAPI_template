@@ -9,5 +9,5 @@ else:
     load_dotenv('.env')
 
 
-TRELLO_API_KEY = os.environ.get('TRELLO_API_KEY')
-TRELLO_TOKEN = os.environ.get('TRELLO_TOKEN')
+SECRET1 = os.environ.get('SECRET1')
+SECRET2 = os.environ.get('SECRET2')
