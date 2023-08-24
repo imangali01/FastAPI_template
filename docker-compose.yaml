@@ -1,0 +1,20 @@
+version: "3"
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: app_name
+    container_name: app_name
+    command: bash -c "uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload"
+    environment:
+      - PROD=false
+    env_file:
+      - .env
+    ports:
+      - 8000:8000
+    volumes:
+      - ./src:/fastapi_app/src
+      - ./static:/fastapi_app/static
+      - ./requirements.txt:/fastapi_app/requirements.txt
+    restart: always
